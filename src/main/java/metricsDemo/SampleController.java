@@ -12,7 +12,7 @@ public class SampleController {
     private static Random random = new Random();
     
     private static final Counter requestTotal = Counter.build()
-        .name("my_sample_counter")
+        .name("my_sample_counter_demo")
         .labelNames("status")
         .help("A simple Counter to illustrate custom Counters in Spring Boot and Prometheus").register();
 
