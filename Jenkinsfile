@@ -77,7 +77,7 @@ pipeline {
             steps {
                 script {
                      try {
-                        sh "kill $(netstat -ntpl | grep kubectl | awk '{print $7}' | cut -d / -f 1)"
+                        sh "`kill $(netstat -ntpl | grep kubectl | awk '{print $7}' | cut -d / -f 1)`"
                         sh "microk8s.kubectl port-forward svc/microk8s-kubernetes-poc --address 0.0.0.0 9090:8080 &"
                     } catch (err) {
                         echo err.getMessage()
