@@ -17,11 +17,12 @@ public class SampleController {
         .help("A simple Counter to illustrate custom Counters in Spring Boot and Prometheus").register();
 
     @RequestMapping("/endpoint")
-    public void endpoint() {
+    public String endpoint() {
         if (random.nextInt(2) > 0) {
             requestTotal.labels("success").inc();
         } else {
             requestTotal.labels("error").inc();
         }
+        return "Hellow World";
     }
 }
