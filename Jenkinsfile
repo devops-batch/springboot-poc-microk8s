@@ -41,14 +41,14 @@ pipeline {
         stage('building docker image') {
             steps {
                 script {
-                    sh "cd DOCKER; sudo docker build -t genpact-poc-coe/microk8s-kubernetes-poc:v_${BUILD_NUMBER} ."
+                    sh "cd DOCKER; sudo docker build -t genpactpoc/microk8s-kubernetes-poc:v_${BUILD_NUMBER} ."
                 }
             }
         }
         stage('dcoker push') {
             steps {
                 script {
-                    sh "sudo docker push genpact-poc-coe/microk8s-kubernetes-poc:v_${BUILD_NUMBER}"
+                    sh "sudo docker push genpactpoc/microk8s-kubernetes-poc:v_${BUILD_NUMBER}"
                 }
             }
         }
