@@ -73,6 +73,18 @@ pipeline {
                 echo currentBuild.result
             }
         }
+        stage('port forwarding') {
+            steps {
+                script {
+                     try {
+                        sh "microk8s.kubectl port-forward svc/microk8s-kubernetes-poc --address 0.0.0.0 9090:8080 &"
+                    } catch (err) {
+                        echo err.getMessage()
+                    }
+                    
+                }
+            }
+        }
         // stage('remove unused images') {
         //     steps {
         //         script {
