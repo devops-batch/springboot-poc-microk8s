@@ -23,6 +23,6 @@ public class SampleController {
         } else {
             requestTotal.labels("error").inc();
         }
-        return "This web page has been created to show case DEMO of CICD for AWS COE";
+        return "Testing for work";
     }
 }
